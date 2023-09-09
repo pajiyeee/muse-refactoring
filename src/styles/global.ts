@@ -1,5 +1,6 @@
 //global.ts
 import { css } from '@emotion/react'
+import { bold } from './fonts'
 
 const globalStyle = css`
   * {
