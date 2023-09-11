@@ -2,7 +2,7 @@
 
 import { Global, ThemeProvider } from '@emotion/react'
 import globalStyle from '../styles/global'
-import theme from '../styles/theme'
+import { theme } from '../styles/theme'
 import { bold, regular, extraLight } from '../styles/fonts/index'
 import { Metadata } from 'next'
 

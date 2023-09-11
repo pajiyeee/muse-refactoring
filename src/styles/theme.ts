@@ -1,8 +1,8 @@
 //theme.ts
-import { DefaultTheme } from '@emotion/react'
+import { Theme } from '@emotion/react'
 
 declare module '@emotion/react' {
-  export interface DefaultTheme {
+  export interface Theme {
     fontSize: {
       xxs: string
       sm: string
@@ -34,7 +34,7 @@ declare module '@emotion/react' {
   }
 }
 
-const theme: DefaultTheme = {
+export const theme: Theme = {
   fontSize: {
     xxs: '12px',
     sm: '14px',
@@ -65,5 +65,3 @@ const theme: DefaultTheme = {
     white: '#FFFFFF',
   },
 }
-
-export default theme

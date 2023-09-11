@@ -33,6 +33,7 @@ const globalStyle = css`
     padding: 0;
     border: 0;
     vertical-align: baseline;
+    white-space: pre-line;
   }
 
   body {

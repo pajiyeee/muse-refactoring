@@ -4,13 +4,14 @@ import styled from '@emotion/styled'
 import { flexBox } from '@/styles/mixin'
 import { fontH2 } from '@/styles/fonts/index'
 import { useState } from 'react'
+import HomeBanner from '@/Components/HomeBanner'
 
 export default function Home() {
   const [list, setList] = useState([])
 
   return (
     <>
-      <Header />
+      <HomeBanner />
       <Wrap>
         <h2 css={fontH2()}>뮤지컬 차트</h2>
         <List>
@@ -28,14 +29,6 @@ export default function Home() {
     </>
   )
 }
-
-const Header = styled.header`
-  ${flexBox()};
-  position: relative;
-  width: 100%;
-  height: 40rem;
-  background-color: #eeeeee;
-`
 
 const Wrap = styled.div`
   width: 80%;
