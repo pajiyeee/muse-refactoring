@@ -63,5 +63,12 @@ export const theme: Theme = {
 
     black: '#000000',
     white: '#FFFFFF',
+
+    ageColor: {
+      1: '#00695C',
+      12: '#2962FF',
+      15: '#FF6F00',
+      18: '#FF3D00',
+    },
   },
 }

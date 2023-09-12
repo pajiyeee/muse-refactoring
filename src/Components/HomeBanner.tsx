@@ -5,41 +5,7 @@ import { useState, useRef, useEffect } from 'react'
 import { absolute, flexBox } from '@/styles/mixin'
 import { fontBody2 } from '@/styles/fonts/index'
 import { ArrowBackIos, ArrowForwardIos } from '@emotion-icons/material-twotone'
-
-export const BANNER_IMAGE = [
-  {
-    id: 0,
-    image: 'banner/image00.jpg',
-    title: 'banner/title00.svg',
-    text: `전 세계가 사랑한 명작, \n오리지널 매력 그대로 Coming soon.`,
-    time: '2023.06.01 ~ 2023.11.03',
-    theater: 'banner/theater00.png',
-  },
-  {
-    id: 1,
-    image: 'banner/image00.jpg',
-    title: 'banner/title00.svg',
-    text: `전 세계가 사랑한 명작, \n오리지널 매력 그대로 Coming soon.`,
-    time: '2023.06.01 ~ 2023.11.03',
-    theater: 'banner/theater00.png',
-  },
-  {
-    id: 2,
-    image: 'banner/image00.jpg',
-    title: 'banner/title00.svg',
-    text: `전 세계가 사랑한 명작, \n오리지널 매력 그대로 Coming soon.`,
-    time: '2023.06.01 ~ 2023.11.03',
-    theater: 'banner/theater00.png',
-  },
-  {
-    id: 3,
-    image: 'banner/image00.jpg',
-    title: 'banner/title00.svg',
-    text: `전 세계가 사랑한 명작, \n오리지널 매력 그대로 Coming soon.`,
-    time: '2023.06.01 ~ 2023.11.03',
-    theater: 'banner/theater00.png',
-  },
-]
+import { BANNER_IMAGE } from '@/constants'
 
 const HomeBanner = () => {
   const [bannerListPosition, setBannerListPosition] = useState(0)

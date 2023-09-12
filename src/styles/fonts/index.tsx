@@ -20,87 +20,87 @@ const extraLight = css`
 `
 
 const fontH1 = (
-  margin: string | undefined = '0 auto',
-  padding: string | undefined = '0 auto 32px',
+  margin: string | undefined = 'auto',
+  paddingBottom: string | undefined = '32px',
   color: string | undefined = '#212121'
 ) => css`
   font-size: 56px;
   ${bold};
   color: ${color};
   margin: ${margin};
-  padding: ${padding};
+  padding-bottom: ${paddingBottom};
 `
 
 const fontH2 = (
-  margin: string | undefined = '0 auto',
-  padding: string | undefined = '0 auto 24px',
+  margin: string | undefined = 'auto',
+  paddingBottom: string | undefined = '24px',
   color: string | undefined = '#212121'
 ) => css`
   font-size: 44px;
   ${bold};
   color: ${color};
   margin: ${margin};
-  padding: ${padding};
+  padding-bottom: ${paddingBottom};
 `
 
 const fontH3 = (
-  margin: string | undefined = '0 auto',
-  padding: string | undefined = '0 auto 20px',
+  margin: string | undefined = 'auto',
+  paddingBottom: string | undefined = '20px',
   color: string | undefined = '#212121'
 ) => css`
   font-size: 28px;
   ${bold};
   color: ${color};
   margin: ${margin};
-  padding: ${padding};
+  padding-bottom: ${paddingBottom};
 `
 
 const fontH4 = (
-  margin: string | undefined = '0 auto',
-  padding: string | undefined = '0 auto 16px',
+  margin: string | undefined = 'auto',
+  paddingBottom: string | undefined = '16px',
   color: string | undefined = '#212121'
 ) => css`
   font-size: 20px;
   ${regular};
   color: ${color};
   margin: ${margin};
-  padding: ${padding};
+  padding-bottom: ${paddingBottom};
 `
 
 const fontBody1 = (
-  margin: string | undefined = '0 auto',
-  padding: string | undefined = '0 auto 12px',
+  margin: string | undefined = 'auto',
+  paddingBottom: string | undefined = '8px',
   color: string | undefined = '#212121'
 ) => css`
   font-size: 18px;
   ${regular};
   color: ${color};
   margin: ${margin};
-  padding: ${padding};
+  padding-bottom: ${paddingBottom};
 `
 
 const fontBody2 = (
-  margin: string | undefined = '0 auto',
-  padding: string | undefined = '0 auto 12px',
+  margin: string | undefined = 'auto',
+  paddingBottom: string | undefined = '8px',
   color: string | undefined = '#424242'
 ) => css`
   font-size: 16px;
   ${regular};
   color: ${color};
   margin: ${margin};
-  padding: ${padding};
+  padding-bottom: ${paddingBottom};
 `
 
 const fontBody3 = (
   margin: string | undefined = '0 auto',
-  padding: string | undefined = '0 auto 8px',
+  paddingBottom: string | undefined = '8px',
   color: string | undefined = '#616161'
 ) => css`
   font-size: 13px;
   ${regular};
   color: ${color};
   margin: ${margin};
-  padding: ${padding};
+  padding-bottom: ${paddingBottom};
 `
 
 export {
