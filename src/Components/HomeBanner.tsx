@@ -143,7 +143,6 @@ const Banner = styled.ul`
   }
 `
 const ArrowForward = styled(ArrowBackIos)`
-  position: absolute;
   ${absolute('50%', '4%', 'auto', '0, -50%')};
   width: 48px;
   color: ${({ theme }) => theme.color.white};
@@ -151,7 +150,6 @@ const ArrowForward = styled(ArrowBackIos)`
 `
 
 const ArrowBack = styled(ArrowForwardIos)`
-  position: absolute;
   ${absolute('50%', 'auto', '4%', '0, -50%')};
   width: 48px;
   color: ${({ theme }) => theme.color.white};

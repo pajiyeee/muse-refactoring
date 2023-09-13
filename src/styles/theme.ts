@@ -31,6 +31,12 @@ declare module '@emotion/react' {
       black: string
       white: string
     }
+    ageColor: {
+      1: string
+      12: string
+      15: string
+      18: string
+    }
   }
 }
 
@@ -42,7 +48,6 @@ export const theme: Theme = {
     md: '18px',
     lg: '24px',
   },
-
   color: {
     primary_light: '#7C21FF',
     primary_normal: '#6200EE',
@@ -63,12 +68,11 @@ export const theme: Theme = {
 
     black: '#000000',
     white: '#FFFFFF',
-
-    ageColor: {
-      1: '#00695C',
-      12: '#2962FF',
-      15: '#FF6F00',
-      18: '#FF3D00',
-    },
+  },
+  ageColor: {
+    1: '#00695C',
+    12: '#2962FF',
+    15: '#FF6F00',
+    18: '#FF3D00',
   },
 }
