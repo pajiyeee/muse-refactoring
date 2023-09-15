@@ -1,17 +1,17 @@
 'use client'
 
 import styled from '@emotion/styled'
-import { CSSProperties } from 'react'
 import { useState } from 'react'
+import { FontH2, FontH4, FontBody2 } from '../Components/UI/Text'
 import { flexBox, absolute, divider } from '@/styles/mixin'
 import { fontH2, fontH4, fontBody2, bold } from '@/styles/fonts/index'
 import HomeBanner from '@/Components/HomeBanner'
-import { Theme } from '@emotion/react'
 import Button from '@/Components/UI/Button'
 import { theme } from '@/styles/theme'
 
 export default function Home() {
   const [list, setList] = useState([])
+  const [buttonOn, setButtonOn] = useState(false)
 
   const handleAgeRated = () => {
     // if (item.ageRated === 1) 'All'
@@ -22,40 +22,54 @@ export default function Home() {
     <>
       <HomeBanner />
       <Wrap>
-        <h2 css={fontH2()}>뮤지컬 차트</h2>
         <List>
           {/* {list.map((item) => ( */}
           <div>
             <Card
-            // key={id}
-            // css={{
-            //   backgroundImage: `url(${item.postImageUrl})`,
-            // }}
+              onMouseOver={() => setButtonOn(true)}
+              onMouseLeave={() => setButtonOn(false)}
+              // key={id}
+              // css={{
+              //   backgroundImage: `url(${item.postImageUrl})`,
+              // }}
             >
-              <Dim />
-              <ButtonWrap>
-                <Button background={'none'} border={theme.color.gray_500}>
-                  상세보기
-                </Button>
-                <Button background={'none'} border={theme.color.gray_500}>
-                  빠른예매
-                </Button>
-              </ButtonWrap>
+              {buttonOn && (
+                <>
+                  <Dim />
+                  <ButtonWrap>
+                    <Button background={'none'} border={theme.color.gray_500}>
+                      상세보기
+                    </Button>
+                    <Button background={'none'} border={theme.color.gray_500}>
+                      빠른예매
+                    </Button>
+                  </ButtonWrap>
+                </>
+              )}
+
               <LimitedAge ageRated={15}>
-                15{/* {handleAgeRated()} */}
+                <FontBody2 css={bold} padding={'0'} color={theme.color.white}>
+                  15{/* {handleAgeRated()} */}
+                </FontBody2>
               </LimitedAge>
             </Card>
 
-            <h4 css={fontH4()}>아이다{/* {item.musicalName} */}</h4>
-            <p css={fontBody2()}>
+            <FontH4>아이다{/* {item.musicalName} */}</FontH4>
+            <FontBody2>
               예매율 <b css={bold}>80%{/* `${item.reservationRated}%` */}</b>
-            </p>
-            <span css={fontBody2()}>{/*`${item.releasedDate}`*/}23.09.20</span>
-            <Divider />
-            <span>
+            </FontBody2>
+            <FontBody2
+              css={bold}
+              display={'inline-block'}
+              color={theme.color.primary_normal}
+            >
               D-15
               {/*compareDate(item.releasedDate)*/}
-            </span>
+            </FontBody2>
+            <Divider />
+            <FontBody2 display={'inline-block'}>
+              개봉일 {/*`${item.releasedDate}`*/}23.09.20
+            </FontBody2>
           </div>
           {/* ))} */}
         </List>
@@ -81,6 +95,7 @@ const Card = styled.li`
   height: 346px;
   margin-bottom: 12px;
   overflow: hidden;
+  background: #ccc;
 `
 
 const Dim = styled.div`
@@ -99,9 +114,8 @@ const ButtonWrap = styled.div`
   z-index: 20;
 `
 
-const LimitedAge = styled.span`
+const LimitedAge = styled.div`
   ${absolute('10px', 'auto', '10px', '0,0')};
-  ${fontBody2('auto', '0')}
   padding: 6px;
   color: ${({ theme }) => theme.color.white};
   background-color: ${({ ageRated, theme }) =>

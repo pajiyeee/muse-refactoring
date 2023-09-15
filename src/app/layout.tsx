@@ -3,8 +3,9 @@
 import { Global, ThemeProvider } from '@emotion/react'
 import globalStyle from '../styles/global'
 import { theme } from '../styles/theme'
-import { bold, regular, extraLight } from '../styles/fonts/index'
+import { regular } from '../styles/fonts/index'
 import { Metadata } from 'next'
+import Nav from '../Components/Nav'
 
 export const metaData: Metadata = {
   title: '뮤즈, 뮤지컬 빠른 예매',
@@ -21,7 +22,10 @@ export default function RootLayout({
       <Global styles={globalStyle} />
       <ThemeProvider theme={theme}>
         <html lang="en" css={regular}>
-          <body suppressHydrationWarning={true}>{children}</body>
+          <body suppressHydrationWarning={true}>
+            <Nav />
+            {children}
+          </body>
         </html>
       </ThemeProvider>
     </>

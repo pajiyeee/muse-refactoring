@@ -2,10 +2,12 @@
 
 import styled from '@emotion/styled'
 import { useState, useRef, useEffect } from 'react'
+import { FontBody2 } from './UI/Text'
 import { absolute, flexBox } from '@/styles/mixin'
-import { fontBody2 } from '@/styles/fonts/index'
 import { ArrowBackIos, ArrowForwardIos } from '@emotion-icons/material-twotone'
 import { BANNER_IMAGE } from '@/constants'
+import { theme } from '../styles/theme'
+import BgImg from './UI/BgImg'
 
 const HomeBanner = () => {
   const [bannerListPosition, setBannerListPosition] = useState(0)
@@ -63,25 +65,28 @@ const HomeBanner = () => {
               ref={bannerItemRef}
             >
               <section>
-                <div
-                  css={{
-                    backgroundImage: `url(${title})`,
-                  }}
+                <BgImg
+                  backgroundImage={`${title}`}
+                  height={'140px'}
+                  backgroundPosition={'bottom left'}
+                  margin={'0 0 32px 0'}
                 />
-                <p css={fontBody2()}>{text}</p>
-                <span css={fontBody2()}>{time}</span>
-                <div
-                  css={{
-                    backgroundImage: `url(${theater})`,
-                  }}
+                <FontBody2 color={theme.color.gray_100}>{text}</FontBody2>
+                <FontBody2 color={theme.color.gray_100}>{time}</FontBody2>
+                <BgImg
+                  backgroundImage={`${theater}`}
+                  opacity={0.8}
+                  height={'32px'}
+                  backgroundPosition={'bottom left'}
+                  margin={'72px 0 0 0'}
                 />
               </section>
             </li>
           )
         )}
       </Banner>
-      <ArrowForward onClick={() => bannerForwardHandler(+1)} />
-      <ArrowBack onClick={() => bannerBackHandler(-1)} />
+      <IconArrowForward onClick={() => bannerForwardHandler(+1)} />
+      <IconArrowBack onClick={() => bannerBackHandler(-1)} />
     </Header>
   )
 }
@@ -102,9 +107,8 @@ const Banner = styled.ul`
   li {
     width: 100%;
     height: max-content;
-
     background-size: cover;
-    background-position: center left;
+    background-position: center;
     background-repeat: no-repeat;
   }
 
@@ -114,42 +118,15 @@ const Banner = styled.ul`
     padding-top: 90px;
     padding-bottom: 60px;
   }
-
-  div:first-of-type {
-    width: 100%;
-    height: 140px;
-    margin-bottom: 32px;
-    background-size: contain;
-    background-position: bottom left;
-    background-repeat: no-repeat;
-  }
-
-  p {
-    margin-bottom: 16px;
-    color: ${({ theme }) => theme.color.gray_100};
-  }
-
-  span {
-    color: ${({ theme }) => theme.color.gray_100};
-  }
-
-  div:last-of-type {
-    width: 100%;
-    height: 32px;
-    margin-top: 72px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-  }
 `
-const ArrowForward = styled(ArrowBackIos)`
+const IconArrowForward = styled(ArrowBackIos)`
   ${absolute('50%', '4%', 'auto', '0, -50%')};
   width: 48px;
   color: ${({ theme }) => theme.color.white};
   opacity: 0.3;
 `
 
-const ArrowBack = styled(ArrowForwardIos)`
+const IconArrowBack = styled(ArrowForwardIos)`
   ${absolute('50%', 'auto', '4%', '0, -50%')};
   width: 48px;
   color: ${({ theme }) => theme.color.white};

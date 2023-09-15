@@ -12,7 +12,7 @@ export const BANNER_IMAGE = [
     image:
       'https://i.pinimg.com/originals/28/bb/dd/28bbddf0ba6ccdbefa29c1d790bf948d.gif',
     title: 'banner/title01.png',
-    text: `초대형 흥행 신드롬을 일으킨뮤지컬 데스노트가 돌아온다.\n매력적인 캐릭터와 두 천재의 긴장감 넘치는 스토리`,
+    text: `초대형 흥행 신드롬을 일으킨 뮤지컬 데스노트가 돌아온다.\n매력적인 캐릭터와 두 천재의 긴장감 넘치는 스토리`,
     time: '2023.09.30 ~ 2023.12.31',
     theater: 'banner/theater00.png',
   },
