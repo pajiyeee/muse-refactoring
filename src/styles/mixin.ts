@@ -20,13 +20,3 @@ top: ${top};
 left: ${left};
 right: ${right};
 transform: translate(${translate});`
-
-export const divider = (
-  height: string | undefined = '16px',
-  color: string | undefined = '#cccccc',
-  padding: string | undefined = 'auto 10px'
-) => `width: 1px;
-  height: ${height};
-  background-color: ${color};
-  margin: ${padding};
-  `

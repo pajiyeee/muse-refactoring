@@ -51,7 +51,7 @@ export const FontH4 = styled.h4<CSSProperties>`
   font-size: 20px;
   ${bold};
   margin: ${({ margin }) => margin || 'auto'};
-  padding: ${({ padding }) => padding || '0  0 12px 0'};
+  padding: ${({ padding }) => padding || '0  0 4px 0'};
   border-radius: ${({ borderRadius }) => borderRadius || 'none'};
   border: 1px solid
     ${({ border, theme }) =>
@@ -91,11 +91,28 @@ export const FontBody3 = styled.p<CSSProperties>`
   text-align: ${({ textAlign }) => textAlign || 'left'};
   color: ${({ color, theme }) =>
     theme[color as keyof typeof theme] || color || '#616161'};
-  font-size: 16px;
+  font-size: 14px;
   ${regular};
   margin: ${({ margin }) => margin || 'auto'};
   padding: ${({ padding }) => padding || '0  0 8px 0'};
   border-radius: ${({ borderRadius }) => borderRadius || 'none'};
+  border: 1px solid
+    ${({ border, theme }) =>
+      theme[border as keyof typeof theme] || border || 'none'};
+  display: ${({ display }) => display || 'inherit'};
+`
+
+export const FontBody4 = styled.span<CSSProperties>`
+  text-align: ${({ textAlign }) => textAlign || 'left'};
+  color: ${({ color, theme }) =>
+    theme[color as keyof typeof theme] || color || '#616161'};
+  font-size: 10px;
+  ${regular};
+  margin: ${({ margin }) => margin || 'auto'};
+  padding: ${({ padding }) => padding || '0  0 8px 0'};
+  border-radius: ${({ borderRadius }) => borderRadius || 'none'};
+  background-color: ${({ backgroundColor, theme }) =>
+    theme[backgroundColor as keyof typeof theme] || backgroundColor};
   border: 1px solid
     ${({ border, theme }) =>
       theme[border as keyof typeof theme] || border || 'none'};

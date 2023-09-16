@@ -2,9 +2,9 @@
 
 import styled from '@emotion/styled'
 import { useState } from 'react'
-import { FontH2, FontH4, FontBody2 } from '../Components/UI/Text'
-import { flexBox, absolute, divider } from '@/styles/mixin'
-import { fontH2, fontH4, fontBody2, bold } from '@/styles/fonts/index'
+import { FontH4, FontBody2, FontBody3, FontBody4 } from '../Components/UI/Text'
+import { bold } from '@/styles/fonts/index'
+import { flexBox, absolute } from '@/styles/mixin'
 import HomeBanner from '@/Components/HomeBanner'
 import Button from '@/Components/UI/Button'
 import { theme } from '@/styles/theme'
@@ -55,21 +55,27 @@ export default function Home() {
             </Card>
 
             <FontH4>아이다{/* {item.musicalName} */}</FontH4>
-            <FontBody2>
-              예매율 <b css={bold}>80%{/* `${item.reservationRated}%` */}</b>
-            </FontBody2>
-            <FontBody2
-              css={bold}
-              display={'inline-block'}
+            <FontBody3 padding={'0'} color={theme.color.gray_900}>
+              {/*`${item.theater}`*/}블루스퀘어 신한카드홀
+            </FontBody3>
+            <FontBody3>{/*`${item.releasedDate}`*/}23.09.20</FontBody3>
+            <FontBody4
+              margin={'0 4px 0 0'}
+              padding={'2px 4px'}
               color={theme.color.primary_normal}
+              border={theme.color.primary_normal}
             >
               D-15
               {/*compareDate(item.releasedDate)*/}
-            </FontBody2>
-            <Divider />
-            <FontBody2 display={'inline-block'}>
-              개봉일 {/*`${item.releasedDate}`*/}23.09.20
-            </FontBody2>
+            </FontBody4>
+            <FontBody4
+              padding={'2px 4px'}
+              color={theme.color.white}
+              backgroundColor={theme.color.primary_normal}
+              border={theme.color.primary_normal}
+            >
+              예매율 80%{/* `${item.reservationRated}%` */}
+            </FontBody4>
           </div>
           {/* ))} */}
         </List>
@@ -120,9 +126,4 @@ const LimitedAge = styled.div`
   color: ${({ theme }) => theme.color.white};
   background-color: ${({ ageRated, theme }) =>
     theme.ageColor[ageRated as keyof typeof theme.ageColor]};
-`
-
-const Divider = styled.div`
-  display: inline-block;
-  ${divider()};
 `
