@@ -8,6 +8,7 @@ import { flexBox, absolute } from '@/styles/mixin'
 import HomeBanner from '@/Components/HomeBanner'
 import Button from '@/Components/UI/Button'
 import { theme } from '@/styles/theme'
+import { Theme } from '@emotion/react'
 
 export default function Home() {
   const [list, setList] = useState([])
@@ -47,7 +48,7 @@ export default function Home() {
                 </>
               )}
 
-              <LimitedAge ageRated={15}>
+              <LimitedAge ageRated={15} theme={theme}>
                 <FontBody2 css={bold} padding={'0'} color={theme.color.white}>
                   15{/* {handleAgeRated()} */}
                 </FontBody2>
@@ -124,6 +125,11 @@ const LimitedAge = styled.div`
   ${absolute('10px', 'auto', '10px', '0,0')};
   padding: 6px;
   color: ${({ theme }) => theme.color.white};
-  background-color: ${({ ageRated, theme }) =>
-    theme.ageColor[ageRated as keyof typeof theme.ageColor]};
+  background-color: ${({
+    ageRated,
+    theme,
+  }: {
+    ageRated: number
+    theme: Theme
+  }) => theme.ageColor[ageRated as keyof typeof theme.ageColor]};
 `
